@@ -1,12 +1,17 @@
-import '../../styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css'
+import '../styles/globals.css'
+import NextAuthSesstionProvider from '@/providers/sessionProvider'
 import type { Metadata } from 'next'
-import { Roboto_Flex as Roboto } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { ReactNode } from 'react'
 
-const roboto = Roboto({ subsets: ['latin'] })
+const popins = Poppins({
+  subsets: ['latin'],
+  weight: ['200', '400', '500', '600'],
+})
 
 export const metadata: Metadata = {
-  title: 'Home Instituição',
+  title: 'Login Instituição',
   description:
     'Aplicação voltada para as instituições/Ongs, feito com nextJs, typescript, tailwindcss',
   authors: [
@@ -18,7 +23,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={roboto.className}>{children}</body>
+      <body className={popins.className}>
+        <NextAuthSesstionProvider>{children}</NextAuthSesstionProvider>
+      </body>
     </html>
   )
 }

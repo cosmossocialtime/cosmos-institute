@@ -5,7 +5,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const nextAuthOptions: NextAuthOptions = {
   pages: {
-    signIn: '/login',
+    signIn: '/',
   },
   providers: [
     CredentialsProvider({
@@ -16,7 +16,7 @@ export const nextAuthOptions: NextAuthOptions = {
       },
 
       async authorize(credentials) {
-        const { data, status } = await api.post('/login', {
+        const { data, status } = await api.post('/auth/signin', {
           email: credentials?.email,
           password: credentials?.password,
         })

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { ToastContainer } from 'react-toastify'
 import { FormLogin } from './components/form'
 
 export default function Login() {
@@ -21,6 +22,7 @@ export default function Login() {
         />
       </div>
       <FormLogin />
+      <ToastContainer autoClose={2000} limit={3} />
     </div>
   )
 }

@@ -3,7 +3,10 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { schemaLogin, typesForLogin } from '@/types/loginForm'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 export function FormLogin() {
   const {
@@ -15,9 +18,21 @@ export function FormLogin() {
     mode: 'all',
     criteriaMode: 'all',
   })
+  const router = useRouter()
 
-  function handleSubmitLogin(data: typesForLogin) {
-    console.log(data)
+  async function handleSubmitLogin({ email, password }: typesForLogin) {
+    const result = await signIn('credentials', {
+      email,
+      password,
+      redirect: false,
+    })
+
+    if (result?.error) {
+      console.log(result)
+      return toast.error('Credenciais incorretas, tente novamente por favor!')
+    }
+
+    router.replace('/teste')
   }
   console.log(errors)
 
