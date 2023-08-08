@@ -28,13 +28,11 @@ export function FormLogin() {
     })
 
     if (result?.error) {
-      console.log(result)
       return toast.error('Credenciais incorretas, tente novamente por favor!')
     }
 
     router.replace('/teste')
   }
-  console.log(errors)
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center p-10">

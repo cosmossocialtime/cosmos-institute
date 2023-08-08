@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         backgroundLogin: 'url(/backgroundLogin.png)',
+        backgroundStart: 'url(/onboardingStart.png)',
       },
       colors: {
         border: 'hsl(var(--border))',

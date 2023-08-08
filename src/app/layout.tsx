@@ -11,7 +11,6 @@ const popins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Login Instituição',
   description:
     'Aplicação voltada para as instituições/Ongs, feito com nextJs, typescript, tailwindcss',
   authors: [
