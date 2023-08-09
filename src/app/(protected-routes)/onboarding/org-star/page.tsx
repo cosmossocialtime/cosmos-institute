@@ -1,12 +1,16 @@
+'use client'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, Star } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import * as Dialog from '@/components/ui/dialog'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function OrgStar() {
+  const router = useRouter()
   return (
-    <main className="flex h-screen w-full items-center justify-center bg-backgroundOrgStar bg-cover bg-no-repeat">
+    <main className="flex h-screen w-full items-center justify-center bg-backgroundOrgStar bg-cover bg-bottom bg-no-repeat">
       <Button
+        onClick={() => router.push('/onboarding/start')}
         className="absolute left-24 top-24 rounded-full border-none bg-[#EFF1F5]/10 py-7 backdrop-blur-sm hover:bg-purple-600"
         variant={'outline'}
       >
