@@ -19,6 +19,7 @@ module.exports = {
       backgroundImage: {
         backgroundLogin: 'url(/backgroundLogin.png)',
         backgroundStart: 'url(/onboardingStart.png)',
+        backgroundOrgStar: 'url(/backgroundOrgStar.png)',
       },
       colors: {
         border: 'hsl(var(--border))',

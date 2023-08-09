@@ -1,8 +1,11 @@
+'use client'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 export default function Teste() {
+  const router = useRouter()
   function handleNextPage() {
-    console.log('Hello')
+    return router.push('/onboarding/org-star')
   }
 
   return (

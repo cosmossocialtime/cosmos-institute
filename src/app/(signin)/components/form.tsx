@@ -31,7 +31,7 @@ export function FormLogin() {
       return toast.error('Credenciais incorretas, tente novamente por favor!')
     }
 
-    router.replace('/teste')
+    router.replace('/onboarding/start')
   }
 
   return (
