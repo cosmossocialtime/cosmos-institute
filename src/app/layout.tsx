@@ -2,10 +2,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import '../styles/globals.css'
 import NextAuthSesstionProvider from '@/providers/sessionProvider'
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
 
-const popins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['200', '400', '500', '600'],
 })
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={popins.className}>
+      <body className={inter.className}>
         <NextAuthSesstionProvider>{children}</NextAuthSesstionProvider>
       </body>
     </html>
