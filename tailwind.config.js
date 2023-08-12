@@ -20,6 +20,8 @@ module.exports = {
         backgroundLogin: 'url(/backgroundLogin.png)',
         backgroundStart: 'url(/onboardingStart.png)',
         backgroundOrgStar: 'url(/backgroundOrgStar.png)',
+        backgroundInstructions: 'url(/instructions.png)',
+        backgroundInstitutions: 'url(/institutions.png)',
       },
       colors: {
         border: 'hsl(var(--border))',
