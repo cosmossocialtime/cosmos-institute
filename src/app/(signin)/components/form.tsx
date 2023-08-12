@@ -5,10 +5,14 @@ import { schemaLogin, typesForLogin } from '@/types/loginForm'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
+import { Eye, EyeClosed } from '@phosphor-icons/react'
 
 export function FormLogin() {
+  const [showPassword, setShowPassword] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -67,13 +71,28 @@ export function FormLogin() {
           >
             Senha
           </label>
-          <Input
-            {...register('password')}
-            className="px-3 py-3 text-zinc-500"
-            type="password"
-            id="password"
-            placeholder="Digite sua senha aqui"
-          />
+          <div className="group relative flex w-full max-w-md items-center justify-center gap-2">
+            <Input
+              {...register('password')}
+              id="password"
+              min={8}
+              required
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Digite sua senha aqui"
+              className="w-full rounded-md border-2 border-solid border-[#A2ABCC] p-2 px-3 py-3 text-zinc-500 transition-all duration-200 hover:border-purple-500 hover:shadow-sm hover:shadow-purple-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="button-show-password absolute right-4 top-4"
+            >
+              {showPassword ? (
+                <EyeClosed size={23} className="text-[#A2ABCC]" />
+              ) : (
+                <Eye size={23} className="text-[#A2ABCC]" />
+              )}
+            </button>
+          </div>
           {errors.password && (
             <span className="text-sm text-rose-600">
               {errors.password.message}
