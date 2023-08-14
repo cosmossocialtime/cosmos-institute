@@ -22,6 +22,7 @@ module.exports = {
         backgroundOrgStar: 'url(/backgroundOrgStar.png)',
         backgroundInstructions: 'url(/instructions.png)',
         backgroundInstitutions: 'url(/institutions.png)',
+        backgroundFinish: 'url(/finishOnboarding.png)',
       },
       colors: {
         border: 'hsl(var(--border))',

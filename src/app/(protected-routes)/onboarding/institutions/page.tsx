@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Camera, DownloadSimple, UploadSimple } from '@phosphor-icons/react'
 import html2canvas from 'html2canvas'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export default function Institutions() {
@@ -15,6 +16,7 @@ export default function Institutions() {
   const [profilePhoto, setProfilePhoto] = useState('')
   const [onDialog, setOnDialog] = useState(false)
   const [printImage, setPrintImage] = useState('')
+  const router = useRouter()
 
   function receiveImg(source: string) {
     setSelectedImg(source)
@@ -31,6 +33,10 @@ export default function Institutions() {
     const base64Image = canvas.toDataURL('image/jpg')
 
     setPrintImage(base64Image)
+  }
+
+  function handleSubmitImage() {
+    router.push('/onboarding/finish')
   }
 
   return (
@@ -117,7 +123,10 @@ export default function Institutions() {
           />
         </div>
       </div>
-      <Button className="absolute bottom-10 left-1/2 w-full max-w-xs -translate-x-1/2 -translate-y-1/2 bg-black/30 py-6 backdrop-blur-sm transition-all duration-200">
+      <Button
+        onClick={handleSubmitImage}
+        className="absolute bottom-10 left-1/2 w-full max-w-xs -translate-x-1/2 -translate-y-1/2 bg-black/30 py-6 text-lg backdrop-blur-sm transition-all duration-200"
+      >
         Enviar
       </Button>
     </div>

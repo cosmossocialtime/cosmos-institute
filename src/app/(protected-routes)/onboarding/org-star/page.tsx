@@ -42,7 +42,7 @@ export default function OrgStar() {
               />
               Nome da Organização social
             </Dialog.DialogTrigger>
-            <Dialog.DialogContent className="border-none bg-[#22255D] text-zinc-50">
+            <Dialog.DialogContent className="overflow-auto border-none bg-[#22255D] text-zinc-50">
               <Dialog.DialogTitle>
                 <p className="self-end text-[50px]">Teste</p>
               </Dialog.DialogTitle>
