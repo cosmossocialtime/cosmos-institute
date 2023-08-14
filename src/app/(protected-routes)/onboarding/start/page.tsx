@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 
-export default function Teste() {
+export default function Start() {
   const router = useRouter()
   function handleNextPage() {
     return router.push('/onboarding/org-star')

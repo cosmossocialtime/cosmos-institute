@@ -33,7 +33,7 @@ export default function OrgStar() {
             </p>
           </div>
           <Dialog.Dialog>
-            <Dialog.DialogTrigger className="rounded-lg bg-[#7C7C7C14]/10 p-10 text-zinc-50 backdrop-blur-sm transition-all duration-300 hover:bg-[#7C7C7C14]/20 hover:backdrop-blur-none">
+            <Dialog.DialogTrigger className="rounded-lg border-l border-t border-violet-500 bg-[#7C7C7C14]/10 p-10 text-zinc-50 backdrop-blur-sm transition-all duration-300 hover:bg-[#7C7C7C14]/20 hover:backdrop-blur-none">
               <Image
                 src="/star.png"
                 height={250}

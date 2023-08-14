@@ -5,11 +5,7 @@ export const metadata: Metadata = {
   title: 'Estrela da organização',
 }
 
-export default async function PrivateRoutes({
-  children,
-}: {
-  children: ReactNode
-}) {
+export default async function OrgStar({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <body>{children}</body>

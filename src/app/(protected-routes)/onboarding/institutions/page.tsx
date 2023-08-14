@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 'use client'
 import { ButtonBackRotues } from '@/components/ButtonBackRoutes'
 import { DialogCrop } from '@/components/Crop/DialogCrop'
 import SettingCropArea from '@/components/Crop/SettingCropArea'
 import UploadImage from '@/components/Crop/UploadImage'
+import { Button } from '@/components/ui/button'
 import { Camera, DownloadSimple, UploadSimple } from '@phosphor-icons/react'
 import html2canvas from 'html2canvas'
 import Image from 'next/image'
@@ -48,9 +50,9 @@ export default function Institutions() {
       </header>
 
       <div className="card flex min-h-screen min-w-[1080px] flex-col items-center gap-5 bg-backgroundInstitutions bg-cover bg-center py-28">
-        <div className="w-80 rounded-[20px] border-2 border-solid border-blue-900 bg-blue-800/90 p-5">
+        <div className="w-80 rounded-[20px] border-2 border-solid border-blue-900/40 bg-black/20 p-5 backdrop-blur-sm">
           <UploadImage updateImgSrc={receiveImg}>
-            <div className="relative aspect-square w-full cursor-pointer overflow-hidden rounded-[10px] border-2 border-solid border-blue-700 bg-gray-100">
+            <div className="relative aspect-square w-full cursor-pointer overflow-hidden rounded-[10px] border-2 border-solid border-blue-900/40 bg-gray-100">
               {profilePhoto ? (
                 <>
                   <Image
@@ -66,7 +68,7 @@ export default function Institutions() {
                   </div>
                 </>
               ) : (
-                <div className="absolute inset-0 m-5 flex flex-col items-center justify-center gap-5 rounded-lg border border-dashed border-gray-400 bg-gray-200">
+                <div className="absolute inset-0 m-5 flex flex-col items-center justify-center gap-5 rounded-lg border border-dashed border-blue-900/40 bg-gray-200">
                   <UploadSimple size={32} />
                   <span className="text-lg text-gray-900">
                     Insira sua foto aqui
@@ -115,6 +117,9 @@ export default function Institutions() {
           />
         </div>
       </div>
+      <Button className="absolute bottom-10 left-1/2 w-full max-w-xs -translate-x-1/2 -translate-y-1/2 bg-black/30 py-6 backdrop-blur-sm transition-all duration-200">
+        Enviar
+      </Button>
     </div>
   )
 }
