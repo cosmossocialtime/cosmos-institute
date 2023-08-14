@@ -63,7 +63,7 @@ export default function Institutions() {
                     width={320}
                     height={320}
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black text-gray-100 opacity-0 transition-opacity hover:opacity-30">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black text-gray-100 opacity-0 transition-opacity hover:opacity-40">
                     <Camera size={56} />
                   </div>
                 </>
