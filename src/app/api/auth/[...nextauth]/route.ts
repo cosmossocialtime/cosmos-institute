@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { api } from '@/utils/api'
 import { NextAuthOptions } from 'next-auth'
 import NextAuth from 'next-auth/next'

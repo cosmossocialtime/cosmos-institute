@@ -1,6 +1,6 @@
 import 'react-toastify/dist/ReactToastify.css'
 import '../styles/globals.css'
-import NextAuthSesstionProvider from '@/providers/sessionProvider'
+import NextAuthSessionProvider from '@/providers/sessionProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <NextAuthSesstionProvider>{children}</NextAuthSesstionProvider>
+        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
       </body>
     </html>
   )

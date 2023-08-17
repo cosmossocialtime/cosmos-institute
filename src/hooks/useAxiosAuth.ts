@@ -1,7 +1,7 @@
 'use client'
 import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
-import { axiosAuth } from '../api'
+import { axiosAuth } from '@/utils/api'
 import { useRefreshToken } from './useRefreshToken'
 
 const useAxiosAuth = () => {
