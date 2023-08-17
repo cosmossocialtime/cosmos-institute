@@ -10,9 +10,5 @@ export default async function LayoutInstitutions({
 }: {
   children: ReactNode
 }) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  )
+  return <>{children}</>
 }

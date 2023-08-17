@@ -10,9 +10,5 @@ export default async function PrivateRoutes({
 }: {
   children: ReactNode
 }) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  )
+  return <>{children}</>
 }

@@ -1,12 +1,35 @@
 'use client'
 import { Button } from '@/components/ui/button'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
+interface Todo {
+  userId: number
+  id: number
+  title: string
+}
+
+async function getTodos() {
+  const response = await axios<Todo>({
+    method: 'GET',
+    url: 'https://jsonplaceholder.typicode.com/todos/1',
+  })
+  return response
+}
+
 export default function Start() {
+  const { data } = useQuery({
+    queryKey: ['todo'],
+    queryFn: getTodos,
+  })
+
   const router = useRouter()
   function handleNextPage() {
     return router.push('/onboarding/org-star')
   }
+
+  console.log(data)
 
   return (
     <main className="h-screen w-full items-center justify-center bg-backgroundStart bg-cover bg-no-repeat">

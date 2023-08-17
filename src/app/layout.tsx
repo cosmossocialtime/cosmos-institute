@@ -4,6 +4,7 @@ import NextAuthSessionProvider from '@/providers/sessionProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
+import { ReactQueryProvider } from '@/utils/queryClient'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,7 +24,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+        <NextAuthSessionProvider>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </NextAuthSessionProvider>
       </body>
     </html>
   )

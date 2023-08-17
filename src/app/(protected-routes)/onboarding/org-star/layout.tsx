@@ -6,9 +6,5 @@ export const metadata: Metadata = {
 }
 
 export default async function OrgStar({ children }: { children: ReactNode }) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  )
+  return <>{children}</>
 }
