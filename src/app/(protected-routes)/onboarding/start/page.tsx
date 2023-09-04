@@ -28,7 +28,6 @@ export default function Start() {
   function handleNextPage() {
     return router.push('/onboarding/org-star')
   }
-
   console.log(data)
 
   return (
