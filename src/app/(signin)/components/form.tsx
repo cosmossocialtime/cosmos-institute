@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { Eye, EyeClosed } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 export function FormLogin() {
   const [showPassword, setShowPassword] = useState(false)
@@ -98,6 +99,14 @@ export function FormLogin() {
               {errors.password.message}
             </span>
           )}
+          <span className="py-3 text-right text-sm">
+            <Link
+              href="/forgot-the-password"
+              className="text-purple-500 hover:text-purple-700"
+            >
+              Esqueci a minha senha
+            </Link>
+          </span>
         </div>
         <Button className="mt-10 w-1/2 py-6 text-lg font-normal">Entrar</Button>
       </form>
