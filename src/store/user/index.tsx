@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import { StoreProps } from './types'
 
 type UserProps = {
   email: string

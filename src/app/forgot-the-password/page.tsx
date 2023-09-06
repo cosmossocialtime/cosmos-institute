@@ -19,7 +19,7 @@ export default function ForgotPassword() {
     criteriaMode: 'all',
   })
 
-  const { addUser, email } = useUserStore()
+  const { addUser } = useUserStore()
 
   function handleSubmitForgotThePassword({ email }: typesForForgotPassword) {
     try {
