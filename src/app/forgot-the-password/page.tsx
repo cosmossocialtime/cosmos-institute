@@ -1,6 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { useUserStore } from '@/store/user'
+import { useCreateCookie } from '@/hooks/useCreateCookies'
 import {
   schemaForgotPassword,
   typesForForgotPassword,
@@ -19,13 +19,13 @@ export default function ForgotPassword() {
     criteriaMode: 'all',
   })
 
-  const { addUser } = useUserStore()
-
-  function handleSubmitForgotThePassword({ email }: typesForForgotPassword) {
+  async function handleSubmitForgotThePassword({
+    email,
+  }: typesForForgotPassword) {
     try {
       api.post('/auth/forgotPassword').then((response) => {
         if (response.status === 200) {
-          addUser(email)
+          useCreateCookie('email', email)
           toast.success(
             'Enviado um link para redefinição de senha no seu email',
           )

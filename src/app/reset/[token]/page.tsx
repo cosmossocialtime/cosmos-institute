@@ -5,7 +5,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
-import { useUserStore } from '@/store/user'
+import { useGetCookie } from '@/hooks/useGetCookie'
 import { resetProps, schemaForResetPassword } from '@/types/reset-password'
 import { api } from '@/utils/api'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -25,7 +25,6 @@ type queryParamsProps = {
 export default function resetPassword({ params }: queryParamsProps) {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setConfirmPassword] = useState(false)
-  const { email } = useUserStore()
   const router = useRouter()
 
   const {
@@ -34,19 +33,19 @@ export default function resetPassword({ params }: queryParamsProps) {
     formState: { errors },
   } = useForm<resetProps>({ resolver: zodResolver(schemaForResetPassword) })
 
-  function handleSubmitResetPassword({ password }: resetProps) {
+  async function handleSubmitResetPassword({ password }: resetProps) {
+    const email = await useGetCookie('email')
     api
       .patch('/auth/resetPassword', {
         password,
-        email,
+        email: email?.value,
         token: params.token,
       })
       .then((response) => {
         if (response.status === 200) {
-          router.push('/')
+          router.replace('/')
           toast.success('Senha alterada com sucesso')
         }
-
         if (response.status === 404) {
           return toast.error(
             'Não foi possivel processar sua requisição, tente novamente',
@@ -124,7 +123,7 @@ export default function resetPassword({ params }: queryParamsProps) {
             </span>
           )}
 
-          <label htmlFor="confirm-password" className="text-gray-600">
+          <label htmlFor="confirm-password" className="w-fit text-gray-600">
             Confirme a nova senha
           </label>
           <div className="group relative flex w-full justify-between gap-2">
