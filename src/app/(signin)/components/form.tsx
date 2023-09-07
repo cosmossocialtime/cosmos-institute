@@ -80,7 +80,7 @@ export function FormLogin() {
               required
               type={showPassword ? 'text' : 'password'}
               placeholder="Digite sua senha aqui"
-              className="w-full rounded-md border-2 border-solid border-[#A2ABCC] p-2 px-3 py-3 text-zinc-500 transition-all duration-200 hover:border-purple-500 hover:shadow-sm hover:shadow-purple-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full rounded-md border-2 border-solid border-[#A2ABCC] px-3 py-3 text-zinc-500 transition-all duration-200 hover:border-purple-500 hover:shadow-sm hover:shadow-purple-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
             <button
               type="button"

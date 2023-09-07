@@ -57,7 +57,9 @@ export default function ForgotPassword() {
         />
       </div>
       <main className="flex flex-1 flex-col items-center justify-center gap-2">
-        <h2 className="text-3xl text-purple-600">Informe o seu email</h2>
+        <h2 className="text-3xl font-semibold text-[#68459E]">
+          Informe o seu email
+        </h2>
         <form
           onSubmit={handleSubmit(handleSubmitForgotThePassword)}
           className="mt-4 flex flex-col gap-2 p-10"
@@ -72,7 +74,7 @@ export default function ForgotPassword() {
               type="email"
               required
               placeholder="Escreva seu email aqui@email.com.br"
-              className="rounded-md border-2 border-solid border-[#A2ABCC] p-2 transition-all duration-200 valid:border-green-500 hover:border-purple-500 hover:shadow-sm hover:shadow-purple-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="rounded-md border-2 border-solid border-[#A2ABCC] px-3 py-3 transition-all duration-200 valid:border-green-500 hover:border-purple-500 hover:shadow-sm hover:shadow-purple-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
           </div>
           <Button className="text-lg">Recuperar</Button>
